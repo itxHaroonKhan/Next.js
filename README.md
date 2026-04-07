@@ -1,8 +1,4 @@
-Ye raha aapka mukammal (complete) **README.md** file ka code. Isme image ka sara text, installation steps, aur explanation sab kuch ek hi file mein hai.
 
-Isko copy karke apni `README.md` file mein paste kar dein:
-
-```markdown
 # 🌐 Web Development Course: React & Next.js
 
 Is document mein hum Web Development ke basics aur Next.js ko setup karne ka mukammal tareeqa sikhenge.
@@ -73,4 +69,4 @@ Ab browser mein `http://localhost:3000` kholein.
 | **React** | UI Library |
 | **Next.js** | Full-stack Framework |
 
-```
+
