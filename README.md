@@ -69,4 +69,77 @@ Ab browser mein `http://localhost:3000` kholein.
 | **React** | UI Library |
 | **Next.js** | Full-stack Framework |
 
+Next.js mein file structure ko organize karna bohot zaroori hai taaki project bada hone par bhi manage karna asaan rahe. Niche ek standard aur **Best Practice** ke mutabiq `README.md` file ka content diya gaya hai.
+
+Isko aap apni `FILE_STRUCTURE.md` ya `README.md` mein paste kar sakte hain.
+
+---
+
+```markdown
+# 📂 Next.js Project File Structure - Best Practices
+
+Next.js (App Router) mein file structure ko sahi tareeqe se manage karna ek professional developer ki nishani hai. Is guide mein hum ek clean aur scalable structure sikhenge.
+
+---
+
+## 🏗️ Recommended Folder Structure
+
+Aapka project kuch is tarah dikhna chahiye:
+
+```text
+my-next-app/
+├── public/              # Static files (Images, Icons, Fonts)
+├── src/                 # Main Source folder
+│   ├── app/             # App Router (Routes, Layouts, Pages)
+│   │   ├── (auth)/      # Route Groups (Login, Signup)
+│   │   ├── (dashboard)/ # Route Groups (Admin, User Panel)
+│   │   ├── api/         # API Routes (Backend Endpoints)
+│   │   ├── layout.tsx   # Global Layout
+│   │   └── page.tsx     # Homepage
+│   ├── components/      # Reusable UI Components
+│   │   ├── ui/          # Small elements (Buttons, Inputs)
+│   │   └── common/      # Shared components (Navbar, Footer)
+│   ├── hooks/           # Custom React Hooks
+│   ├── lib/             # Utility functions & Third-party configs (Prisma, Axios)
+│   ├── services/        # API calling logic (Data fetching)
+│   ├── store/           # State Management (Zustand, Redux)
+│   └── types/           # TypeScript Interfaces/Types
+├── .env.local           # Environment Variables
+├── next.config.js       # Next.js Configuration
+└── tailwind.config.js   # Tailwind CSS Configuration
+```
+
+---
+
+## 🔑 Key Folder Explanations
+
+### 1. `src/app/` (The Core)
+Next.js 13+ mein saari routing `app` folder ke andar hoti hai.
+* **`page.tsx`**: Ye har route ki main file hoti hai.
+* **`layout.tsx`**: Ye pages ke beech shared UI (jaise Navbar) ke liye use hota hai.
+* **`(folder-name)`**: Bracket wali folders "Route Groups" hoti hain, ye URL mein show nahi hoti lekin organization mein madad karti hain.
+
+### 2. `src/components/`
+Sari UI components yahan honi chahiye. Ek achi practice ye hai ke aap `ui` folder banayein jisme base components (shadcn/ui style) rakhein.
+
+### 3. `src/lib/`
+Yahan aap reusable utility functions rakhte hain (jaise `utils.ts`) ya third-party clients (jaise Database connection logic).
+
+### 4. `src/hooks/`
+Agar aap koi custom logic bar-bar use kar rahe hain (jaise `useLocalStorage`), toh uske liye alag hooks folder banayein.
+
+---
+
+## ✅ Best Practices (Zaroori Baatein)
+
+1.  **Modular Approach:** Ek file mein bohot saara code na likhein. Chote-chote components banayein.
+2.  **Route Groups Use Karein:** Auth aur Dashboard ke pages ko `(auth)` aur `(dashboard)` groups mein rakhein taaki folder saaf rahe.
+3.  **Naming Convention:** Folder ke naam hamesha lowercase mein rakhein (e.g., `user-profile`). Components ke naam PascalCase mein honi chahiye (e.g., `Navbar.tsx`).
+4.  **Keep `public` clean:** Sirf wahi images rakhein jo static hon. Baki assets ke liye Cloudinary ya AWS use karein agar project bada hai.
+
+---
+
+## 🚀 Pro Tip for Students
+Hamesha project start karte waqt `src` directory ka option **"Yes"** karein. Isse aapka config files aur application code alag-alag rehta hai aur management asaan ho jati hai.
+
 
