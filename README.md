@@ -142,4 +142,82 @@ Agar aap koi custom logic bar-bar use kar rahe hain (jaise `useLocalStorage`), t
 ## 🚀 Pro Tip for Students
 Hamesha project start karte waqt `src` directory ka option **"Yes"** karein. Isse aapka config files aur application code alag-alag rehta hai aur management asaan ho jati hai.
 
+Next.js mein hamesha **Latest Stable Version** install karna hi sabse behtar hota hai, kyunki usme naye features, security patches, aur behtar performance milti hai.
 
+Niche di gayi `README.md` file aapke aur aapke students ke liye hai, jo explain karti hai ke kaunsa version aur kaise install karna hai.
+
+---
+
+```markdown
+# 🚀 Next.js Installation Guide (2026 Edition)
+
+Next.js ka kaunsa version install karein? Iska seedha jawab hai: **Latest Stable Version**.
+
+---
+
+## ✅ Recommended Version: Next.js 15+ (Latest)
+
+Aaj kal **Next.js 15 (ya jo bhi latest ho)** sabse best hai. Iski wajah ye hai:
+* **Turbopack:** Development server bahut fast chalta hai.
+* **React 19 Support:** Naye React features ka full support.
+* **Stable App Router:** Routing aur data fetching pehle se zyada asaan aur fast hai.
+
+---
+
+## 🛠️ How to Install (Sabse Best Tarika)
+
+Hamesha **Automatic Installation** use karein, kyunki ye saari cheezein (Tailwind, TypeScript, ESLint) khud set kar deta hai.
+
+Terminal mein ye command chalayein:
+
+```bash
+npx create-next-app@latest
+```
+
+### Setup ke waqt ye options select karein (Best Practices):
+
+Jab aap command chalayeinge, Next.js aapse kuch sawal pochega. Inhe follow karein:
+
+1.  **What is your project name?** `my-awesome-project`
+2.  **Would you like to use TypeScript?** `Yes` (Recommended)
+3.  **Would you like to use ESLint?** `Yes`
+4.  **Would you like to use Tailwind CSS?** `Yes` (Best for Styling)
+5.  **Would you like to use `src/` directory?** `Yes` (File structure saaf rehti hai)
+6.  **Would you like to use App Router? (recommended)** `Yes` (Yehi Next.js ka future hai)
+7.  **Would you like to customize the default import alias (@/*)?** `No` (Enter daba dein)
+
+---
+
+## 🏃‍♂️ Project Kaise Chalayein?
+
+Project install hone ke baad, folder ke andar jayein aur server start karein:
+
+```bash
+cd my-awesome-project
+npm run dev
+```
+Ab browser mein `http://localhost:3000` check karein.
+
+---
+
+## ⚠️ Pre-requisites (Zaroori Requirements)
+
+Next.js install karne se pehle check karein ke aapke system mein **Node.js** ka sahi version ho:
+
+* **Node.js Version:** 18.17.0 ya usse naya (Latest LTS version best hai).
+* **Check karne ke liye:** Terminal mein `node -v` likhein.
+
+---
+
+## 💡 Pro Tip for Students
+Agar aap seekh rahe hain, toh hamesha **App Router** use karein (Pages Router purana ho chuka hai). App Router seekhne se aap modern industry ke standards ke mutabiq kaam kar sakenge.
+```
+
+---
+
+### Class ke liye Summary:
+1. **Node.js** update rakhein.
+2. `npx create-next-app@latest` command use karein taaki hamesha fresh version mile.
+3. **App Router** aur **src/ directory** ko hamesha `Yes` karein.
+
+Kya aapko installation mein koi error aa raha hai? Main solve karne mein madad kar sakta hoon.
