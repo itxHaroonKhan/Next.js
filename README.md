@@ -445,3 +445,111 @@ Jab aap `/dashboard/settings` route open karte hain, toh Next.js in sab ko mix k
 **Pro Tip:** Next.js ki khasiyat ye hai ki jab aap Dashboard ke ek page se dusre page par jayenge, toh Header aur Sidebar "Fresh" load nahi honge, wo apni jagah tike rahenge. Sirf beech ka content badlega.
 
 Kya aapko Route Groups (jis mein `(folder)` brackets use hote hain) ke baare mein bhi jaan-na hai?
+
+
+**Zaroor! Next.js (React) mein **Rendering Lists** ek bahut hi basic aur important topic hai. Jab aapke paas database ya API se bohot saara data aata hai, toh aap use list ki shakal mein dikhate hain.
+
+---
+
+### **Topic: Rendering Lists in Next.js**
+
+Jab humein ek array ko UI components mein convert karna hota hai, toh hum JavaScript ka `.map()` method use karte hain.
+
+#### **1. Basic List Rendering**
+Maan lijiye aapke paas users ki ek list hai aur aap unke naam dikhana chahte hain.
+
+**Code Example:**
+```tsx
+export default function UserList() {
+  const users = ["Ali", "Sara", "Ahmed", "Zain"];
+
+  return (
+    <div>
+      <h2>User Names</h2>
+      <ul>
+        {users.map((user, index) => (
+          <li key={index}>{user}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+---
+
+### **Topic: The "key" Prop**
+Next.js/React mein jab bhi aap `.map()` use karte hain, toh har list item ko ek **`key`** dena zaroori hota hai.
+
+*   **Kyun?** Taaki Next.js ko pata chale ki kaunsa item change, add, ya delete hua hai.
+*   **Best Practice:** Hamesha database ki **ID** ko key banayein. Index (`0, 1, 2`) tabhi use karein jab data static ho aur kabhi change na hone wala ho.
+
+---
+
+### **Topic: Rendering Objects (Real World Example)**
+Aksar data array of objects ki surat mein hota hai.
+
+
+
+**Code Example:**
+```tsx
+const products = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mobile", price: 20000 },
+  { id: 3, name: "Watch", price: 5000 },
+];
+
+export default function ProductList() {
+  return (
+    <div>
+      <h1>Product List</h1>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h3>{product.name}</h3>
+          <p>Price: {product.price}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+### **Topic: Conditional Rendering in Lists**
+Kabhi kabhi humein list ke andar kuch items ko filter karna padta hai (jaise sirf "Available" products dikhana).
+
+**Code Example:**
+```tsx
+const items = [
+  { id: 1, name: "Apple", inStock: true },
+  { id: 2, name: "Banana", inStock: false },
+  { id: 3, name: "Orange", inStock: true },
+];
+
+export default function StockList() {
+  return (
+    <ul>
+      {items
+        .filter(item => item.inStock) // Sirf inStock items filter honge
+        .map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))
+      }
+    </ul>
+  );
+}
+```
+
+---
+
+### **Summary Table**
+
+| Topic | Description |
+| :--- | :--- |
+| **`.map()` Method** | Array ko JSX elements mein badalne ke liye use hota hai. |
+| **Key Prop** | Har item ki unique identity ke liye (Performance ke liye zaroori). |
+| **Data Types** | Strings, Numbers, ya Objects ko render kiya ja sakta hai. |
+| **Filtering** | `.filter()` method ko `.map()` se pehle use karke specific data dikha sakte hain. |
+
+Agla topic aap **Event Handling** ya **Data Fetching (Server Components)** ke baare mein jaan-na chahenge?**
